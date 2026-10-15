@@ -72,7 +72,16 @@ npm run dev     # watch build into dist/
 npm run gen     # after adding a plush pack: regenerate its entry + exports
 ```
 
-Release: `npm version minor && git push --follow-tags` (CI publishes the tag).
+### Releasing
+
+```sh
+npm version minor        # new pack or feature (patch for fixes)
+git push --follow-tags   # the tag triggers .github/workflows/publish.yml
+```
+
+Use a minor bump for breaking changes while the version is `0.x`. One-time setup so CI can publish without tokens: on npmjs.com open the package, then Settings, Trusted publishing, GitHub Actions, and enter this repo plus the workflow file `publish.yml`.
+
+To add a plush pack: add `src/plush/packs/<name>.ts`, list it in `src/plush/packs/index.ts`, run `npm run gen` (creates the typed entry and the package exports), and add a row to the table above.
 
 ## License
 
