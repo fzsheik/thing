@@ -1,0 +1,8 @@
+{
+  "space": "src/space.ts",
+  "fuzzy": "src/fuzzy.ts",
+  "plush": "src/plush.ts",
+  "motion": "src/motion.ts",
+  "distinguished": "src/distinguished.tsx",
+  "sorcerers": "src/sorcerers.tsx"
+}

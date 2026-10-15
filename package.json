@@ -1,0 +1,73 @@
+{
+  "name": "agentmascots",
+  "version": "0.1.0",
+  "description": "Animated, cursor-tracking React mascots for AI agents. Idle, listening, thinking, working, speaking, celebrating and sleeping states. Zero dependencies beyond React.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    "./space": {
+      "types": "./dist/space.d.ts",
+      "default": "./dist/space.js"
+    },
+    "./fuzzy": {
+      "types": "./dist/fuzzy.d.ts",
+      "default": "./dist/fuzzy.js"
+    },
+    "./plush": {
+      "types": "./dist/plush.d.ts",
+      "default": "./dist/plush.js"
+    },
+    "./motion": {
+      "types": "./dist/motion.d.ts",
+      "default": "./dist/motion.js"
+    },
+    "./distinguished": {
+      "types": "./dist/distinguished.d.ts",
+      "default": "./dist/distinguished.js"
+    },
+    "./sorcerers": {
+      "types": "./dist/sorcerers.d.ts",
+      "default": "./dist/sorcerers.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "peerDependencies": {
+    "react": ">=19"
+  },
+  "keywords": [
+    "react",
+    "mascot",
+    "avatar",
+    "ai-agent",
+    "animation",
+    "svg",
+    "nextjs",
+    "chatbot"
+  ],
+  "scripts": {
+    "gen": "node scripts/gen-entries.mjs",
+    "build": "npm run gen && node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\" && tsc",
+    "dev": "tsc --watch --preserveWatchOutput",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "esbuild": "^0.28.2",
+    "typescript": "^6.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fzsheik/thing.git"
+  },
+  "homepage": "https://github.com/fzsheik/thing#readme",
+  "bugs": {
+    "url": "https://github.com/fzsheik/thing/issues"
+  }
+}
